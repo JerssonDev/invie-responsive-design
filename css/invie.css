@@ -525,12 +525,25 @@ las propiedades que se pueden heredar son las fuentes y los colores*/
 
   .contacto {
     margin: 0 auto;
+    display: block;
+  }
+
+  .contacto a{
+    display: block;
   }
 
   .formulario {
     width: 265px;
     display: block;
     margin: 0 auto;
+  }
+
+  .sexo label {
+    display: block;
+  }
+
+  .formulario label {
+    font-size: 18px;
   }
 
   .intereses label {
@@ -546,9 +559,12 @@ las propiedades que se pueden heredar son las fuentes y los colores*/
     width: 256px;
   }
 
+  input[type="text"] {
+    margin-bottom: 25px;
+  }
   /*selector de atributos*/
   input[type="text"], input[type="email"] {
-    font-size: 16px;
+    font-size: 20px;
     padding: 5px;
   }
 
