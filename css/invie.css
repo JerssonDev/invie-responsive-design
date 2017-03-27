@@ -1,0 +1,687 @@
+/*
+selector universal
+* {
+  border: 1px solid red;
+  margin: 10px;
+}
+
+selector de etiquetas
+header {
+  background: blue;
+}
+
+section {
+  background: purple;
+}
+
+selector descendente
+article h3 {
+  color: green;
+}
+
+selectores de clase
+.title-a {
+  background: yellow;
+}
+
+.title-b {
+  background: salmon;
+}
+
+selector de ID
+#header{
+  border: 3px solid black;
+}
+
+#portada {
+  border: 3px solid orange;
+}
+
+#guitarras {
+  border: 3px solid brown;
+}
+*/
+/*
+* {
+  width: tamaño;
+  height: tamaño;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding: 10px 13px 5px 15px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin: 10px 13px 5px 15px;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid red;
+}
+*/
+/*es recomendable siempre tener la etiquetas primero en el archivo y ademas 
+ver jerarquia cuando invalida o pisa una propiedad y colocarla en la parte superior a la otra
+
+OJO: si aplicas un widht del 100% esto implica que al 100% se le suma los bordes marbenes padding... en cambio
+si colocas widht auto esto toma el tamaño de lo que tiene incluyendo los marn¿genes de padding bordes y margin
+
+OJO: No hay regla de oro pero normalmente se usan 320, 480, 768, 1024, 1280, 1366, 1440, 1920 tomas las medidas que más le convenga a tu proyecto.
+Móvil
+@media (min-width: 576px) { … }
+
+tablets, 768px a +
+@media (min-width: 768px) { … }
+
+desktops 992px a +
+@media (min-width: 992px) { … }
+
+desktops, 1200px a +
+@media (min-width: 1200px) { … }*/
+
+/* Fonts */
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?gu0jr8');
+  src:  url('../fonts/icomoon.eot?gu0jr8#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?gu0jr8') format('truetype'),
+    url('../fonts/icomoon.woff?gu0jr8') format('woff'),
+    url('../fonts/icomoon.svg?gu0jr8#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-envelope:before {
+  content: "\e900";
+}
+.icon-phone:before {
+  content: "\e901";
+}
+.icon-menu:before {
+  content: "\e902";
+}
+.icon-close:before {
+  content: "\e903";
+}
+
+/* Fonts */
+
+
+body {
+  font-family: 'Allerta', sans-serif;
+  margin: 0;
+}
+
+video {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  background: #273b47;
+  color: white;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+td {
+  padding:20px;
+}
+
+table, td, th {
+  border: 1px solid #273b47;
+  border-collapse: collapse;
+}
+
+input, textarea {
+  outline: 0; /*apaga el foco azul alrededor en el borde*/
+}
+
+textarea {
+  margin-bottom: 10px;
+}
+
+input:focus, textarea:focus {
+  background: lightgray;
+}
+
+.contenedor{
+  max-width: 800px;
+  margin: auto;
+  position: relative
+}
+
+.background {
+  background-color: #466173;
+  background-image: url('../images/background.png');
+  background-size: cover; /*cover: busca la mejor distribucion de la imagen*/
+}
+
+.button {
+  font-size: 18px;
+  border-radius: 12px;
+  border: none;
+  color: white;
+  padding: 7px 12px;
+  cursor: pointer;
+  text-decoration: none;
+  background: #fd324e;
+  background: linear-gradient(to left, #fe344e, #ff7250); /*linear-gradient(): hace el degradado con parametros (to left que va hacia la izquierda y los dos colores que se utilizarán)*/
+  
+  /*background: #f3c5bd; /* Old browsers */
+  /*background: -moz-linear-gradient(top, #f3c5bd 0%, #ff6600 57%); /* FF3.6-15 */
+  /*background: -webkit-linear-gradient(top, #f3c5bd 0%,#ff6600 57%); /* Chrome10-25,Safari5.1-6 */
+  /*background: linear-gradient(to bottom, #f3c5bd 0%,#ff6600 57%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3c5bd', endColorstr='#ff6600',GradientType=0 ); /* IE6-9 */
+}
+
+.titulo {
+  font-size: 70px;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 0;
+  margin-top: 70px;
+}
+
+.titulo span {
+  text-decoration: underline;
+}
+
+.title-a {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.title-b {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.video-responsive-contenedor {
+  position: relative;
+  padding-top: 60%; /* es lo que toma de valor el iframe del video para que se pueda mostrar*/
+}
+
+.video-responsive-src {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.guitarras {
+  color: #1F313C;
+  margin-bottom: 60px ;
+}
+
+.guitarras h2 {
+  font-size: 35px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*las propiedades se heredan le damos propiedades al padre para que los hijos la hereden 
+las propiedades que se pueden heredar son las fuentes y los colores*/
+.portada {
+  color: white;
+  padding: 20px;
+  height: 500px;
+}
+
+.portada button {
+  margin-bottom: 70px;
+}
+
+.menu {
+  font-size: 24px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu li {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.menu li:before {
+  content: '∘ ' ;
+  font-size: 30px;
+  line-height: 20px;
+  color: white;
+}
+
+.logotipo {
+  display: inline-block;
+  margin-left: 0;
+
+}
+
+.guitarra {
+  padding: 10px;
+  margin: 10px 10px 30px 10px;
+  /*overflow: hidden;*/
+  border: 1px solid #1F313C;
+  border-radius: 8px;
+}
+
+.guitarra ol {
+  padding: 0;
+}
+
+.guitarra.b {
+  height: 190px;
+}
+
+.right {
+  float: right;
+  position: relative;
+  top: -127px;
+}
+
+.left {
+  float: left;
+  position: relative;
+}
+
+.contenedor-guitarra-a {
+  padding-left: 20px;
+}
+
+.contenedor-guitarra-b {
+  margin-left: 370px;
+  position: relative;
+  bottom: 90px;
+}
+
+.header {
+  position: relative;
+}
+
+.footer{
+  background: #273b47;
+  padding: 50px 10px;
+}
+
+.contacto {
+  display: flex;
+  width: 265px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.contacto img {
+  display: block;
+}
+
+.contacto strong {
+  display: block;
+}
+
+.contacto a {
+  color: white;
+  text-decoration: none;
+  margin: 10px 10px 10px 0;
+  font-size: 15px;
+}
+
+.footer .contenedor {
+  display: flex;
+  justify-content: space-between;
+}
+
+.formulario {
+  display: flex;
+  width: 400px;
+  color: white;
+}
+
+.col1{
+  margin-right: 15px;
+}
+
+.col2 {
+  align-items: flex-start;
+}
+
+.col2 .botton {
+  margin-top: 15px;
+}
+
+.col1, .col2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.intereses label {
+  font-size: 12px;
+}
+
+.formulario label, .sexo, .intereses {
+  margin-bottom: 10px;
+}
+
+.sexo {
+  margin-top: 10px;
+}
+
+.table {
+  margin: 50px 0;
+}
+
+.burguer-button {
+  color: white;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px; /*centrado entre los 40px de alto*/
+  border-radius: 50%;
+  background: #395667;
+  text-align: center;
+  cursor: pointer;
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  z-index: 3;
+  display: none;
+}
+
+.video-demo {
+  max-width: 500px;
+  width: 100%;
+  border: 5px solid #1F313C;
+}
+
+.video-demo-contenedor {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+
+/* Media Query */
+/* Media -> print para imprimir  -> screen para pantallas*/
+
+
+@media screen and (max-width: 800px) {
+
+  /*body {
+    border: 1px solid red;
+  }*/
+
+  /* Precios */
+  .table {
+    padding: 50px 10px;
+  }
+
+  .table .contenedor {
+    overflow: auto;
+    border: 1px solid #273b47;
+  }
+  /* Precios */
+
+  /* Portada */
+  .titulo {
+    font-size: 45px;
+    margin-top: 30px;
+  }
+
+  .title-a {
+    font-size: 18px;
+  }
+
+  .portada {
+    height: auto;
+  }
+
+  .portada .button {
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+
+  .logotipo {
+    margin: 0;
+  }
+
+  .menu, .menu li:before {
+    font-size: 20px;
+
+  }
+  /* Portada */
+
+  /* Guitarras */
+  .guitarras {
+    text-align: center;
+  }
+
+  .left, .right {
+    float: none;
+    position: static;
+
+  }
+
+  .title-b {
+    margin: 0;
+  }
+
+  .guitarra li {
+    list-style: none;
+  }
+
+  .guitarra.b {
+    height: auto;
+  }
+
+  .contenedor-guitarra-b {
+    margin: 0;
+    position: static
+  }
+  .contenedor-guitarra-a {
+    padding: 0; 
+  }
+
+  .video-demo-contenedor {
+    margin: 0 10px 30px 10px;
+  }
+  
+  /* Guitarras */
+
+}
+
+@media screen and (max-width:767px) {
+
+  .footer {
+    padding:  50px 0;
+  }
+
+  .footer .contenedor {
+    display: block;
+  }
+
+  .contacto {
+    margin: 0 auto;
+  }
+
+  .formulario {
+    width: 265px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .intereses label {
+    display: block;
+    font-size: 16px;
+  }
+
+  .col1 {
+    margin: 0
+  }
+
+  textarea {
+    width: 256px;
+  }
+
+  /*selector de atributos*/
+  input[type="text"], input[type="email"] {
+    font-size: 16px;
+    padding: 5px;
+  }
+
+  input[type="radio"], input[type="checkbox"] {
+    zoom: 1.5;
+  }
+
+}
+
+@media screen and (max-width: 650px) {
+
+  .header {
+    text-align: center;
+  }
+  .menu {
+    position: static;
+    display: block;
+  }
+
+  .menu li:first-child {
+    margin: 0;
+  }
+
+  .menu ul {
+    padding:0;
+  }
+
+}
+
+@media screen and (max-width:500px) {
+
+  /* Portada */
+
+  .precios .header .logotipo {
+    margin: 50px 0;
+  } 
+
+  /* Hamburguer menu */
+  .burguer-button {
+    display: block;
+  }
+  /* Hamburguer menu */
+
+  .header, .contenedor {
+    position: static;
+  }
+
+  .portada .contenedor {
+    position: static;
+  }
+
+  .portada .button {
+    display: block;
+  }
+
+  .menu {
+    /*border: 1px solid red;*/
+    background: rgba(255, 68, 88, .8);
+    position: fixed;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    transition: .3s;
+  }
+
+  .menu.active {
+    left: 0;
+
+  }
+
+  .menu ul {
+    flex: 1; /*esto hace que ese elemento ocupe todo el ancho disponible*/
+  }
+
+  .menu li {
+    display: block;
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid white;
+  }
+
+  .menu li:first-child {
+    border-top: 1px solid white;
+  }
+
+  .menu li:before {
+    display: none;
+  }
+
+  .portada {
+    text-align: center;
+  }
+
+  .titulo {
+    font-size: 30px;
+  }
+
+  .title-a {
+    font-size: 16px;
+  }
+  /* Portada */
+
+  /* Guitarra */
+  .guitarra img {
+    width: 200px;
+    /*height: auto;*/
+  }
+
+  .title-b {
+    font-size: 30px;
+  }
+  
+  /* Guitarra */ 
+
+  /* Footer*/
+  .col2{
+    align-items: stretch;
+  }
+  /* Footer*/
+
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+
+  .background {
+    background-color: #466173;
+    background-image: url('../images/background2x.png');
+    background-size: cover; /*cover: busca la mejor distribucion de la imagen*/
+  }
+
+}
